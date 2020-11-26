@@ -1,5 +1,6 @@
 (ns clojure-basics.core-functions.functions)
 
+
 (defn some-function
   "Some documentation for this function"
   [argument argument2]
@@ -27,13 +28,21 @@
 (fn [param] (str "this functions doesent have a name"))
 
 (#(+ % 3) 3)
+
+(def sum-with-three #(+ % 3))
+
+(sum-with-three 3)
 ;=> 6
+
+(fn [number] (+ number 3))
 
 (#(str %1 %2) "Hello" "!")
 ;=> "Hello!"
 
 ;Partial
 (def plus-one (partial + 1))
+
+;=> (defn plus-one [number] (+ number 1))
 
 (plus-one 1)
 ;=> 2
